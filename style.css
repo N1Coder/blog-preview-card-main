@@ -1,3 +1,10 @@
+:root {
+  --primary-yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 50%);
+  --black: hsl(0, 0%, 7%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -14,5 +21,96 @@
 }
 
 body {
+  display: grid;
+  place-items: center;
+  min-height: 100dvh;
   font-family: "Figtree", sans-serif;
+  background-color: var(--primary-yellow);
+}
+
+.card {
+  --offset-x: 10px;
+  --offset-y: 10px;
+
+  background-color: var(--white);
+  box-shadow: var(--offset-x) var(--offset-y) 0 var(--black);
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: 1rem;
+  max-width: min-content;
+  padding: 1.5rem;
+}
+
+.card figure img {
+  border-radius: 0.75rem;
+}
+
+span {
+  display: block;
+}
+
+article .badge {
+  background-color: var(--primary-yellow);
+  font-weight: 900;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  max-width: fit-content;
+  margin-block: 1.25rem 1rem;
+}
+
+article .published-date {
+  font-weight: 600;
+}
+
+article h1 {
+  margin-block: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+article p {
+  color: var(--grey);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+footer {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+footer img {
+  border-radius: 50%;
+  width: 2rem;
+  aspect-ratio: 1;
+  margin-right: 1rem;
+}
+
+footer span {
+  font-weight: 900;
+}
+
+@media (max-width: 576px) {
+  .card {
+    padding: 1.25rem;
+    max-width: 19rem;
+  }
+
+  .card figure img {
+    width: 100%;
+  }
+
+  article .badge,
+  article .published-date {
+    font-size: 0.875rem;
+  }
+
+  article h1 {
+    font-size: 1.125rem;
+  }
+
+  article p {
+    font-size: 0.875rem;
+  }
 }
